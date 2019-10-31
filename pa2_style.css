@@ -1,0 +1,93 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+}
+
+.header, .footer {
+	background-image: url(https://assets.htvapps.com/assets/images/weather/nt_clear_sm.92a5eb9.jpg);
+	text-align: center;
+	padding: 32px;
+	margin: auto;
+	color: #D6C42D;
+}
+
+.column {
+	float: left;
+	border-style: solid;
+	border-width: thick, thin, thick;
+	border-color: lightgrey;
+}
+
+.column.side {
+	background-image: url(https://cosmos-images1.imgix.net/file/spina/photo/13650/180119_el_gordo_1.jpg?ixlib=rails-2.1.4&auto=format&ch=Width%2CDPR&fit=max&w=835);
+	background-color: #0C4280;
+	width: 50%;
+	color: #D6C42D;
+	margin-top: 20px;
+	padding-bottom: 15px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border-style: solid;
+	border-color: lightgrey;
+	border-width: medium;
+	width: 30%;
+	height: 20%;
+}
+
+#mouse {
+	width: 100px;
+	height: 100px;
+	border-color: black;
+}
+
+#result {
+	background-color: white;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	color: black;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+
+.block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	border-style: solid;
+	border-color: lightgrey;
+	border-width: thin;
+	background-image: url(https://www.universetoday.com/wp-content/uploads/2018/08/cropped-delta_iv_heavy_streak_composite_edits.jpg);
+	width: 90%;
+	height: 50%;
+}
+
+.date {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+#fact_img {
+	background-image: url(https://ak6.picdn.net/shutterstock/videos/23440726/thumb/1.jpg);
+}
+
+

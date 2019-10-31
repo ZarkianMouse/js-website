@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html onclick="interactiveAnimation(event)">
+<head>
+<title>Burhoe Project #2</title>
+<link rel="stylesheet" type="text/css" href="./pa2_style.css">
+<style>
+		div{
+			left:0;
+			top:0;
+		}
+		#mouse1 
+		{
+			-o-transition: 1.1s;
+			transition: left 1.1s, top 1.1s;
+		}
+
+	</style>
+<script type="text/javascript">
+var currentlyMoving = false;
+function interactiveAnimation(event)
+		{
+
+			var movImage = document.getElementById("mouse1");
+			movImage.style.position = "absolute";
+			movImage.style.left = event.clientX + 'px';
+			movImage.style.top = event.clientY + 'px';
+		}
+</script>
+</head>
+
+<body class="content">
+	<div id="mouse1" style="position: absolute;">
+    <img id="mouse" src="https://vignette.wikia.nocookie.net/memoryalpha/images/d/df/USS_Enterprise-A_quarter.jpg/revision/latest?cb=20100518022537&path-prefix=en">
+	</div>
+ 
+	
+	<div class="header">
+		<h1>Space: The Final Frontier</h1>
+		<h2> Author: Naomi Burhoe </h2>
+		
+	</div>
+
+	<div class="block">
+		<div class="column side date">
+		<button type="button" style="background-color:black; color:#D6C42D;" onclick="document.getElementById('demo').innerHTML = Date()">
+		Local Date and Time</button>
+		<p id="demo"></p>
+
+		</div>
+		<div class="column side date">
+		<p>Date and Time Finished: </p>
+		<p>Sept 23, 2019 @ 5pm</p>
+		</div>
+	</div>
+	
+
+	<div class="column side">
+		<img src="https://fsmedia.imgix.net/7c/64/de/56/fb79/497e/b8ca/d146bcdd00ab/space-genetics-is-essential-making-life-in-space-work.jpeg">
+		
+		<div class="block">
+			<h3 style="text-align: center">Factorial Calculator (n!)</h3>
+			
+			<div class="block column side date" id="fact_img">
+				<p>Enter number: <input type="text" id="number" name="number" value="8" onkeyup="calculate()"></p>
+			</div>
+			<div class="block column side date" id="fact_img">
+			
+				<p>Result: <span type="text" id="result"></span></p>
+			</div>
+		
+				<script>
+					// Factorial functions found on StackOverflow post
+// https://stackoverflow.com/questions/51292639/how-to-make-a-javascript-factorial-function
+function factorial(n){
+ if(n===0||n===1){
+   return 1;
+ }
+ return n*factorial(n-1);
+}
+
+
+function calculate(){
+   var fact = document.getElementById("number").value;
+   if(!isNaN(fact)&&fact.trim().length){
+    document.getElementById("result").innerHTML = factorial(parseInt(fact, 10));
+   }
+   else {
+   document.getElementById("result").innerHTML = "<b style='color: black;'>Input must be a number!</b>";
+   }
+}
+					document.getElementById("number").addEventListener("click", calculate());
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<div class="column side" style="float: center-right;">
+		<img src="https://compote.slate.com/images/8986dbc1-6b88-429e-af90-c43f3c2ab06c.jpeg?width=780&height=520&rect=1560x1040&offset=0x0">
+		
+		<div class="block">
+			<h3 style="text-align: center">Email Validation</h3>
+				
+				<div class="column side date" id="fact_img">
+				<p style="text-align: center"> Part 1:</p>
+				<form name="myform"  method="post" action="#" onsubmit="return validateemail();">  
+					Email: <input type="text" name="email"> 
+					<input type="submit" value="Validate" style="float:right; background-color:black; color:#D6C42D;">  
+				</form>  
+				
+				<script>  
+				// Initially published on Javatpoint.com
+				// https://www.javatpoint.com/javascript-form-validation
+function validateemail()  
+{  
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address");  
+  return false;  
+  }  
+}  
+</script>  
+</div>
+				<div class="column side date" id="fact_img">
+				<p style="text-align: center"> Part 2: </p>
+				<form id="signUpForm">
+					Email: <input type="email" id="emailField" required>
+					<button id="okButton" style="float:right; background-color:black; color:yellow;" disabled>Validate</button>
+				</form>
+
+				
+
+<script>
+// Initially written by Joshua Studley
+// https://itnext.io/https-medium-com-joshstudley-form-field-validation-with-html-and-a-little-javascript-1bda6a4a4c8c
+const signUpForm = document.getElementById('signUpForm');
+const emailField = document.getElementById('emailField');
+const okButton = document.getElementById('okButton');
+  
+emailField.addEventListener('keyup', function (event) {
+  isValidEmail = emailField.checkValidity();
+  
+  if ( isValidEmail ) {
+    okButton.disabled = false;
+  } else {
+    okButton.disabled = true;
+  }
+});
+  
+okButton.addEventListener('click', function (event) {
+  signUpForm.submit();
+});
+</script>
+				</div>
+		</div>
+	
+
+</body>
+</html>
